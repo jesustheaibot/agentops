@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentOps — Autonomous Operations for Businesses</title>
+    <meta name="description" content="AgentOps delivers autonomous AI agents that work on behalf of your business — handling research, monitoring, due diligence, and operational workflows without adding headcount.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fff; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 24px 0; border-bottom: 1px solid #eee; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+        .logo span { color: #2563eb; }
+        nav a { margin-left: 32px; text-decoration: none; color: #666; font-size: 14px; transition: color 0.2s; }
+        nav a:hover { color: #2563eb; }
+        .hero { padding: 120px 0 80px; text-align: center; }
+        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+        .hero h1 span { color: #2563eb; }
+        .hero p { font-size: 20px; color: #666; max-width: 640px; margin: 0 auto 40px; }
+        .hero .cta { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background 0.2s; }
+        .hero .cta:hover { background: #1d4ed8; }
+        .hero .sub { margin-top: 16px; font-size: 13px; color: #999; }
+        .services { padding: 80px 0; background: #f8fafc; }
+        .services h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .service-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 32px; transition: box-shadow 0.2s, transform 0.2s; }
+        .service-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1a1a2e; }
+        .service-card p { font-size: 15px; color: #666; margin-bottom: 16px; }
+        .service-card .tag { display: inline-block; background: #eff6ff; color: #2563eb; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .how { padding: 80px 0; }
+        .how h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 16px; }
+        .how .sub { text-align: center; color: #666; margin-bottom: 48px; }
+        .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .step { text-align: center; }
+        .step-num { width: 48px; height: 48px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; }
+        .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .step p { font-size: 14px; color: #666; }
+        .why { padding: 80px 0; background: #f8fafc; }
+        .why h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+        .why-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .why-item p { font-size: 14px; color: #666; }
+        .cta-section { padding: 80px 0; text-align: center; }
+        .cta-section h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; color: #666; margin-bottom: 32px; }
+        .cta-section .cta { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+        footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 13px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .how-steps { grid-template-columns: 1fr 1fr; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Agent<span>Ops</span></div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#how">How It Works</a>
+                <a href="#why">Why AgentOps</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Autonomous Operations<br><span>Without the Headcount</span></h1>
+            <p>AI agents that work on behalf of your business — handling research, monitoring, due diligence, and operational workflows around the clock. You stay in control. We deliver results.</p>
+            <a href="#contact" class="cta">Start with a Free Consultation</a>
+            <p class="sub">No contracts. No setup fees. Cancel anytime.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>What We Deliver</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Delegate Management as a Service</h3>
+                    <p>Autonomous AI agents configured to operate under your organizational identity — handling email triage, calendar management, briefing delivery, and client coordination. You define the rules. We enforce them.</p>
+                    <span class="tag">Recurring Revenue</span>
+                </div>
+                <div class="service-card">
+                    <h3>Due Diligence Research Agent</h3>
+                    <p>Continuous deal screening and DD research. Monitors targets, flags anomalies, verifies claims, and delivers investor-ready memos — without the analyst overhead.</p>
+                    <span class="tag">High Ticket</span>
+                </div>
+                <div class="service-card">
+                    <h3>Competitive Intelligence Monitor</h3>
+                    <p>Never miss a competitor move. Automated tracking of pricing changes, product launches, hiring patterns, and market signals — delivered as structured alerts, not raw data.</p>
+                    <span class="tag">Continuous</span>
+                </div>
+                <div class="service-card">
+                    <h3>Business Intelligence Monitor</h3>
+                    <p>Weekly portfolio or entity briefings assembled from multiple data sources. CFOs and operating partners get synthesized intelligence before their first coffee, every Monday morning.</p>
+                    <span class="tag">Weekly Delivery</span>
+                </div>
+                <div class="service-card">
+                    <h3>Multi-Agent Command Center</h3>
+                    <p>Design, configure, and deploy multi-agent systems for your organization. We set up the architecture, isolation, routing, and workflows — you own the system.</p>
+                    <span class="tag">Setup Service</span>
+                </div>
+                <div class="service-card">
+                    <h3>OpenClaw Onboarding</h3>
+                    <p>Professional setup and configuration of your OpenClaw environment. Standing orders, delegate agents, cron workflows, and integrations — done right the first time.</p>
+                    <span class="tag">One-Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="sub">From first conversation to live agent in days — not months.</p>
+            <div class="how-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Discover</h4>
+                    <p>We identify where autonomous agents create the most leverage for your operation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Configure</h4>
+                    <p>We design and deploy the agent architecture — scoped permissions, standing orders, delivery pipeline.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Deliver</h4>
+                    <p>Agents run autonomously. You receive structured outputs — briefs, alerts, reports.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Refine</h4>
+                    <p>Continuous improvement from feedback. Agents learn. Workflows sharpen. Value compounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why" id="why">
+        <div class="container">
+            <h2>Why AgentOps</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h4>No Headcount Risk</h4>
+                    <p>Autonomous agents don't quit, don't scale linearly, and work 24/7. You pay for results, not seat time.</p>
+                </div>
+                <div class="why-item">
+                    <h4>Real Autonomy</h4>
+                    <p>Agents operate within defined standing orders. You approve what matters. Everything else runs without you.</p>
+                </div>
+                <div class="why-item">
+                    <h4>Domain-Specific</h4>
+                    <p>Not generic AI. We build agents trained on your workflows, your data, your standards.</p>
+                </div>
+                <div class="why-item">
+                    <h4>Speed to Value</h4>
+                    <p>First deliverables in days. No implementation projects. No 6-month deployments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Automate Operations?</h2>
+            <p>Book a free 30-minute consultation. We'll identify where autonomous agents create immediate leverage for your business.</p>
+            <a href="mailto:contact@agentops.com" class="cta">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AgentOps. Autonomous Operations for Businesses.</p>
+            <p style="margin-top:8px;">contact@agentops.com</p>
+        </div>
+    </footer>
+</body>
+</html>
