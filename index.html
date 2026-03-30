@@ -3,204 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentOps — Autonomous Operations for Businesses</title>
-    <meta name="description" content="AgentOps delivers autonomous AI agents that work on behalf of your business — handling research, monitoring, due diligence, and operational workflows without adding headcount.">
+    <title>TID - Tactical Intelligence Dashboard</title>
+    <meta name="description" content="Your morning briefing. Every day. Calendar, email, tasks, and leads -- synthesized by AI and delivered to your inbox before you open your laptop.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fff; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        header { padding: 24px 0; border-bottom: 1px solid #eee; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: 700; color: #1a1a2e; }
-        .logo span { color: #2563eb; }
-        nav a { margin-left: 32px; text-decoration: none; color: #666; font-size: 14px; transition: color 0.2s; }
-        nav a:hover { color: #2563eb; }
-        .hero { padding: 120px 0 80px; text-align: center; }
-        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .hero h1 span { color: #2563eb; }
-        .hero p { font-size: 20px; color: #666; max-width: 640px; margin: 0 auto 40px; }
-        .hero .cta { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background 0.2s; }
-        .hero .cta:hover { background: #1d4ed8; }
-        .hero .sub { margin-top: 16px; font-size: 13px; color: #999; }
-        .services { padding: 80px 0; background: #f8fafc; }
-        .services h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .service-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 32px; transition: box-shadow 0.2s, transform 0.2s; }
-        .service-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
-        .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1a1a2e; }
-        .service-card p { font-size: 15px; color: #666; margin-bottom: 16px; }
-        .service-card .tag { display: inline-block; background: #eff6ff; color: #2563eb; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
-        .how { padding: 80px 0; }
-        .how h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 16px; }
-        .how .sub { text-align: center; color: #666; margin-bottom: 48px; }
-        .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .step { text-align: center; }
-        .step-num { width: 48px; height: 48px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; }
-        .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .step p { font-size: 14px; color: #666; }
-        .why { padding: 80px 0; background: #f8fafc; }
-        .why h2 { font-size: 36px; font-weight: 700; text-align: center; margin-bottom: 48px; }
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
-        .why-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-        .why-item p { font-size: 14px; color: #666; }
-        .cta-section { padding: 80px 0; text-align: center; }
-        .cta-section h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
-        .cta-section p { font-size: 18px; color: #666; margin-bottom: 32px; }
-        .cta-section .cta { display: inline-block; background: #2563eb; color: #fff; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
-        footer { padding: 40px 0; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 13px; }
-        @media (max-width: 768px) {
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --border: #1e1e2e;
+            --text: #f0f0f5;
+            --muted: #8888a0;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --green: #22c55e;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text);
+        }
+        .logo svg { width: 32px; height: 32px; }
+        .badge {
+            font-size: 10px;
+            font-weight: 600;
+            background: var(--accent);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        .hero h1 .accent { color: var(--accent); }
+        .hero .subhead {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+        .hero-cta:hover {
+            background: #2563eb;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .hero-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* What you get */
+        .section { padding: 80px 0; }
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            letter-spacing: -1px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+        .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .card p { font-size: 14px; color: var(--muted); }
+
+        /* Sample */
+        .sample-section { padding: 80px 0; }
+        .sample-section .section-title { margin-bottom: 24px; }
+        .sample-label {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+        .sample-email {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 700px;
+            font-size: 14px;
+        }
+        .sample-email .email-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+        .sample-email .email-header .from { font-weight: 700; }
+        .sample-email .email-header .date { color: var(--muted); float: right; font-size: 13px; }
+        .sample-email .email-header .subject { color: var(--muted); font-size: 13px; margin-top: 4px; }
+        .sample-email h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .sample-email .block { margin-bottom: 16px; }
+        .sample-email .block-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .sample-email table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .sample-email th {
+            text-align: left;
+            padding: 6px 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+        }
+        .sample-email td {
+            padding: 6px 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+        }
+        .sample-email .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* Pricing */
+        .pricing { padding: 80px 0; }
+        .pricing .grid { max-width: 500px; margin: 0 auto; }
+        .price-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+        .price-card.pro {
+            border-color: var(--accent);
+            box-shadow: 0 0 40px var(--accent-glow);
+        }
+        .price-card .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .price-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .price-card .price { font-size: 48px; font-weight: 800; margin-bottom: 4px; }
+        .price-card .price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+        .price-card .desc { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+        .price-card ul { list-style: none; text-align: left; font-size: 14px; }
+        .price-card ul li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .price-card ul li:last-child { border: none; }
+        .price-card ul li::before { content: "✓ "; color: var(--green); font-weight: 700; margin-right: 8px; }
+
+        /* CTA */
+        .cta-section { padding: 100px 0; text-align: center; }
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .cta-section p { color: var(--muted); font-size: 18px; margin-bottom: 32px; }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+        footer p + p { margin-top: 4px; }
+
+        @media (max-width: 640px) {
             .hero h1 { font-size: 36px; }
-            .how-steps { grid-template-columns: 1fr 1fr; }
-            nav { display: none; }
+            .section-title { font-size: 28px; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Agent<span>Ops</span></div>
-            <nav>
-                <a href="#services">Services</a>
-                <a href="#how">How It Works</a>
-                <a href="#why">Why AgentOps</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Autonomous Operations<br><span>Without the Headcount</span></h1>
-            <p>AI agents that work on behalf of your business — handling research, monitoring, due diligence, and operational workflows around the clock. You stay in control. We deliver results.</p>
-            <a href="#contact" class="cta">Start with a Free Consultation</a>
-            <p class="sub">No contracts. No setup fees. Cancel anytime.</p>
+<header>
+    <div class="container">
+        <div class="logo">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#3b82f6"/>
+                <path d="M8 10h16M8 16h10M8 22h13" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="22" r="3" fill="#22c55e"/>
+            </svg>
+            TID
+            <span class="badge">BETA</span>
         </div>
-    </section>
+    </div>
+</header>
 
-    <section class="services" id="services">
-        <div class="container">
-            <h2>What We Deliver</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Delegate Management as a Service</h3>
-                    <p>Autonomous AI agents configured to operate under your organizational identity — handling email triage, calendar management, briefing delivery, and client coordination. You define the rules. We enforce them.</p>
-                    <span class="tag">Recurring Revenue</span>
-                </div>
-                <div class="service-card">
-                    <h3>Due Diligence Research Agent</h3>
-                    <p>Continuous deal screening and DD research. Monitors targets, flags anomalies, verifies claims, and delivers investor-ready memos — without the analyst overhead.</p>
-                    <span class="tag">High Ticket</span>
-                </div>
-                <div class="service-card">
-                    <h3>Competitive Intelligence Monitor</h3>
-                    <p>Never miss a competitor move. Automated tracking of pricing changes, product launches, hiring patterns, and market signals — delivered as structured alerts, not raw data.</p>
-                    <span class="tag">Continuous</span>
-                </div>
-                <div class="service-card">
-                    <h3>Business Intelligence Monitor</h3>
-                    <p>Weekly portfolio or entity briefings assembled from multiple data sources. CFOs and operating partners get synthesized intelligence before their first coffee, every Monday morning.</p>
-                    <span class="tag">Weekly Delivery</span>
-                </div>
-                <div class="service-card">
-                    <h3>Multi-Agent Command Center</h3>
-                    <p>Design, configure, and deploy multi-agent systems for your organization. We set up the architecture, isolation, routing, and workflows — you own the system.</p>
-                    <span class="tag">Setup Service</span>
-                </div>
-                <div class="service-card">
-                    <h3>OpenClaw Onboarding</h3>
-                    <p>Professional setup and configuration of your OpenClaw environment. Standing orders, delegate agents, cron workflows, and integrations — done right the first time.</p>
-                    <span class="tag">One-Time</span>
-                </div>
+<section class="hero">
+    <div class="container">
+        <h1>Your morning briefing.<br><span class="accent">Automated.</span></h1>
+        <p class="subhead">Every morning at 8 AM, receive a synthesized briefing pulled from your calendar, email, tasks, and leads. Read it in two minutes. Know what matters today.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
+            Get Your First Briefing Free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="hero-note">No credit card. No setup. Cancel anytime.</p>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <div class="container">
+        <p class="section-label">What you receive</p>
+        <h2 class="section-title">Four inputs. One briefing.</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Calendar</h3>
+                <p>Today's priority events with context on what matters and what can wait.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h3>Email</h3>
+                <p>Unread messages from the last 24 hours filtered by sender and urgency.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h3>Tasks</h3>
+                <p>What's due today pulled from your task lists across all platforms.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Form Responses</h3>
+                <p>New leads and inquiries from your intake forms, ready for follow-up.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="how" id="how">
-        <div class="container">
-            <h2>How It Works</h2>
-            <p class="sub">From first conversation to live agent in days — not months.</p>
-            <div class="how-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Discover</h4>
-                    <p>We identify where autonomous agents create the most leverage for your operation.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Configure</h4>
-                    <p>We design and deploy the agent architecture — scoped permissions, standing orders, delivery pipeline.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>Deliver</h4>
-                    <p>Agents run autonomously. You receive structured outputs — briefs, alerts, reports.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <h4>Refine</h4>
-                    <p>Continuous improvement from feedback. Agents learn. Workflows sharpen. Value compounds.</p>
-                </div>
+<div class="divider"></div>
+
+<section class="sample-section">
+    <div class="container">
+        <p class="section-label">What it looks like</p>
+        <h2 class="section-title">An email. Not a dashboard.</h2>
+        <p class="sample-label">Delivered to your inbox at 8 AM. Read it on any device.</p>
+        <div class="sample-email">
+            <div class="email-header">
+                <span class="from">TID &lt;noreply@tid.ai&gt;</span>
+                <span class="date">Mon, Mar 30</span>
+                <div class="subject">Your TID Briefing - March 30, 2026</div>
+            </div>
+            <h2>Your Tactical Briefing</h2>
+            <div class="block">
+                <div class="block-title">Calendar</div>
+                <table>
+                    <tr><th>Time</th><th>Event</th><th>Location</th></tr>
+                    <tr><td>10:00 AM</td><td>Strategy call with partner</td><td>Zoom</td></tr>
+                    <tr><td>2:00 PM</td><td>TU student interview</td><td>Google Meet</td></tr>
+                    <tr><td>4:30 PM</td><td>Weekly review</td><td>--</td></tr>
+                </table>
+            </div>
+            <div class="block">
+                <div class="block-title">Unread Email (3 need your attention)</div>
+                <table>
+                    <tr><th>From</th><th>Subject</th></tr>
+                    <tr><td>Sarah Chen</td><td>Re: Q4 partnership terms</td></tr>
+                    <tr><td>TU Student Lead</td><td>Interest in advanced pistol course</td></tr>
+                    <tr><td>GitHub</td><td>AgentOps deployment succeeded</td></tr>
+                </table>
+            </div>
+            <div class="block">
+                <div class="block-title">Tasks Due Today</div>
+                <table>
+                    <tr><th>Task</th><th>List</th></tr>
+                    <tr><td>Follow up with Q4 lead</td><td>Business</td></tr>
+                    <tr><td>Film intro module</td><td>Content</td></tr>
+                </table>
+            </div>
+            <div class="footer">TID - Tactical Intelligence Dashboard &middot; Generated daily at 8 AM</div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="pricing">
+    <div class="container">
+        <p class="section-label">Pricing</p>
+        <h2 class="section-title">Simple.</h2>
+        <div class="grid">
+            <div class="price-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <p class="desc">5 briefings per month</p>
+                <ul>
+                    <li>5 briefings/month</li>
+                    <li>Calendar + Email</li>
+                    <li>Daily at 8 AM</li>
+                </ul>
+            </div>
+            <div class="price-card pro">
+                <span class="tag">RECOMMENDED</span>
+                <h3>Pro</h3>
+                <div class="price">$99<span>/month</span></div>
+                <p class="desc">Unlimited. Full stack.</p>
+                <ul>
+                    <li>Unlimited briefings</li>
+                    <li>Calendar + Email + Tasks + Forms</li>
+                    <li>Daily at your time</li>
+                    <li>Priority support</li>
+                    <li>Custom integrations</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="why" id="why">
-        <div class="container">
-            <h2>Why AgentOps</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <h4>No Headcount Risk</h4>
-                    <p>Autonomous agents don't quit, don't scale linearly, and work 24/7. You pay for results, not seat time.</p>
-                </div>
-                <div class="why-item">
-                    <h4>Real Autonomy</h4>
-                    <p>Agents operate within defined standing orders. You approve what matters. Everything else runs without you.</p>
-                </div>
-                <div class="why-item">
-                    <h4>Domain-Specific</h4>
-                    <p>Not generic AI. We build agents trained on your workflows, your data, your standards.</p>
-                </div>
-                <div class="why-item">
-                    <h4>Speed to Value</h4>
-                    <p>First deliverables in days. No implementation projects. No 6-month deployments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="divider"></div>
 
-    <section class="why" id="products">
-        <div class="container">
-            <h2>TID — Tactical Intelligence Dashboard</h2>
-            <div class="why-grid" style="grid-template-columns: 1fr;">
-                <div class="why-item" style="background:#fff;padding:32px;border-radius:12px;border:1px solid #e5e7eb;">
-                    <h4 style="font-size:22px;margin-bottom:12px;">Your Morning Briefing. Automated.</h4>
-                    <p style="font-size:15px;margin-bottom:16px;">Every morning at 8 AM, wake up to a synthesized briefing pulled from your calendar, email, tasks, and form responses — compiled by AI, delivered to your inbox. Read it in 2 minutes. Know what matters today.</p>
-                    <ul style="font-size:14px;color:#666;list-style:none;padding:0;">
-                        <li style="margin-bottom:8px;">✓ Calendar — today's priority events</li>
-                        <li style="margin-bottom:8px;">✓ Email — what needs your attention</li>
-                        <li style="margin-bottom:8px;">✓ Tasks — what's due today</li>
-                        <li style="margin-bottom:8px;">✓ Form responses — new leads and inquiries</li>
-                    </ul>
-                    <p style="margin-top:20px;font-size:14px;color:#2563eb;font-weight:600;">$99/month — First briefing free</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="cta" style="margin-top:16px;display:inline-block;background:#2563eb;color:#fff;padding:12px 32px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Get Your First Briefing Free</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="cta-section">
+    <div class="container">
+        <h2>Start for free.</h2>
+        <p>Your first briefing arrives tomorrow morning.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
+            Get Your First Briefing Free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+</section>
 
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Ready to Automate Operations?</h2>
-            <p>Book a free 30-minute consultation. We'll identify where autonomous agents create immediate leverage for your business.</p>
-            <a href="mailto:contact@agentops.com" class="cta">Schedule Free Consultation</a>
-        </div>
-    </section>
+<footer>
+    <div class="container">
+        <p>TID - Tactical Intelligence Dashboard</p>
+        <p>jesustheaibot@gmail.com</p>
+    </div>
+</footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 AgentOps. Autonomous Operations for Businesses.</p>
-            <p style="margin-top:8px;">contact@agentops.com</p>
-        </div>
-    </footer>
 </body>
 </html>
