@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist -- Your AI Executive Assistant</title>
-    <meta name="description" content="Every email gets a drafted reply. Every lead gets followed up. Every client gets reminded. You hit send. That's the job.">
+    <title>Receptionist -- Your Business Runs Better</title>
+    <meta name="description" content="More customers. Less work. Better results. Every inquiry followed up. Every lead tracked. Every follow-up fast.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -34,7 +34,6 @@
 
         .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 
-        /* Header */
         header {
             padding: 18px 0;
             border-bottom: 1px solid var(--border);
@@ -61,7 +60,6 @@
             height: 34px;
             border-radius: 8px;
             overflow: hidden;
-            position: relative;
         }
         .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
         .badge {
@@ -71,10 +69,8 @@
             color: #fff;
             padding: 2px 8px;
             border-radius: 4px;
-            letter-spacing: 0.5px;
         }
 
-        /* Hero */
         .hero {
             padding: 90px 0 70px;
             text-align: center;
@@ -88,12 +84,12 @@
         }
         .hero h1 .accent { color: var(--accent); }
         .hero .subhead {
-            font-size: 20px;
+            font-size: 21px;
             color: var(--muted);
             max-width: 520px;
             margin: 0 auto 36px;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .hero-cta {
             display: inline-flex;
@@ -121,7 +117,6 @@
 
         .divider { height: 1px; background: var(--border); }
 
-        /* Use case */
         .section { padding: 80px 0; }
         .section-label {
             font-size: 12px;
@@ -138,24 +133,52 @@
             letter-spacing: -1px;
         }
 
-        /* Use case flow */
-        .flow {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* Pain points */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
         }
-        .flow-step {
+        .pain-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .pain-card .x { color: #ef4444; font-size: 18px; margin-bottom: 8px; }
+        .pain-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .pain-card p { font-size: 13px; color: var(--muted); }
+
+        /* Value props */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .value-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .value-card .check { color: var(--green); font-size: 18px; margin-bottom: 8px; }
+        .value-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .value-card p { font-size: 13px; color: var(--muted); }
+
+        /* How it works */
+        .steps { display: flex; flex-direction: column; gap: 16px; }
+        .step {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             align-items: flex-start;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 24px;
+            border-radius: 12px;
+            padding: 22px;
         }
-        .flow-step .dot {
-            width: 32px;
-            height: 32px;
+        .step .dot {
+            width: 30px;
+            height: 30px;
             background: var(--accent-dim);
             border: 1px solid var(--accent);
             border-radius: 50%;
@@ -167,45 +190,34 @@
             color: var(--accent);
             flex-shrink: 0;
         }
-        .flow-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-        .flow-step p { font-size: 14px; color: var(--muted); }
-        .flow-step .email-preview {
-            margin-top: 12px;
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px;
-            font-size: 13px;
-        }
-        .flow-step .email-preview .from { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
-        .flow-step .email-preview .body { color: var(--text); line-height: 1.5; }
-        .draft-tag {
-            display: inline-block;
-            background: rgba(79,142,247,0.15);
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-        }
+        .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .step p { font-size: 13px; color: var(--muted); }
 
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .feat {
+        /* Example */
+        .example-box {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 22px;
+            padding: 24px;
+            margin-top: 16px;
         }
-        .feat h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-        .feat p { font-size: 13px; color: var(--muted); }
+        .example-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+        .example-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .example-box th {
+            text-align: left;
+            padding: 6px 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .example-box td {
+            padding: 6px 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .example-box td:last-child { color: var(--green); font-weight: 600; text-align: right; }
 
         /* Pricing */
         .pricing { padding: 80px 0; }
@@ -220,7 +232,7 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 32px 26px;
+            padding: 30px 24px;
             text-align: center;
         }
         .price-card.pro {
@@ -237,8 +249,8 @@
             border-radius: 20px;
             margin-bottom: 12px;
         }
-        .price-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
-        .price-card .price { font-size: 42px; font-weight: 800; margin-bottom: 4px; }
+        .price-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+        .price-card .price { font-size: 40px; font-weight: 800; margin-bottom: 4px; }
         .price-card .price span { font-size: 14px; font-weight: 400; color: var(--muted); }
         .price-card .desc { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
         .price-card ul { list-style: none; text-align: left; font-size: 13px; }
@@ -246,41 +258,11 @@
         .price-card ul li:last-child { border: none; }
         .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 8px; }
 
-        .crm-preview {
-            margin-top: 16px;
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px;
-            font-size: 12px;
-            text-align: left;
-        }
-        .crm-preview .title { font-weight: 700; margin-bottom: 8px; color: var(--accent); }
-        .crm-preview table { width: 100%; border-collapse: collapse; }
-        .crm-preview th {
-            text-align: left;
-            padding: 4px 8px;
-            border-bottom: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .crm-preview td {
-            padding: 4px 8px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-        }
-        .crm-preview .status-new { color: var(--accent); }
-        .crm-preview .status-qualified { color: var(--yellow); }
-        .crm-preview .status-won { color: var(--green); }
-
         /* CTA */
         .cta-section { padding: 90px 0; text-align: center; }
         .cta-section h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
         .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 28px; }
 
-        /* Footer */
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
@@ -293,7 +275,8 @@
         @media (max-width: 640px) {
             .hero h1 { font-size: 34px; }
             .section-title { font-size: 26px; }
-            .features-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .value-grid { grid-template-columns: 1fr; }
             .pricing .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -314,13 +297,13 @@
 
 <section class="hero">
     <div class="container">
-        <h1>Your inbox.<br><span class="accent">Receptionist drafts the reply.</span></h1>
-        <p class="subhead">Every email gets a drafted response. You read it, hit send. Every lead gets followed up. Every client gets reminded. You stay in control.</p>
+        <h1>More customers.<br><span class="accent">Less work. Better results.</span></h1>
+        <p class="subhead">Every inquiry gets a response. Every lead gets tracked. Every follow-up is fast. Your business runs better, even when you're busy.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
             Start free. No credit card.
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p class="hero-note">Connects to your Google account. We draft. You send. That's it.</p>
+        <p class="hero-note">Set up in 10 minutes. No complicated software.</p>
     </div>
 </section>
 
@@ -328,38 +311,97 @@
 
 <section class="section">
     <div class="container">
-        <p class="section-label">What it actually does</p>
-        <h2 class="section-title">See it in action.</h2>
+        <p class="section-label">Sound familiar?</p>
+        <h2 class="section-title">The gap between leads and customers is follow-up.</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="x">x</div>
+                <h3>You lose jobs to competitors who just called back faster</h3>
+                <p>You were on a job. The inquiry sat for 2 days. They hired someone else.</p>
+            </div>
+            <div class="pain-card">
+                <div class="x">x</div>
+                <h3>You're organized for a week, then everything falls apart</h3>
+                <p>Spreadsheets and sticky notes stop working when things get busy.</p>
+            </div>
+            <div class="pain-card">
+                <div class="x">x</div>
+                <h3>You spend more time on admin than on your actual work</h3>
+                <p>The phone rings, you answer it, you lose the job because you're not there.</p>
+            </div>
+            <div class="pain-card">
+                <div class="x">x</div>
+                <h3>You have no idea where your best leads even come from</h3>
+                <p>Someone called. Did they find you on Google? Word of mouth? You never asked.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="flow">
-            <div class="flow-step">
+<div class="divider"></div>
+
+<section class="section">
+    <div class="container">
+        <p class="section-label">What you get</p>
+        <h2 class="section-title">Built for how you actually work.</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="check">+</div>
+                <h3>Fast follow-up, every time</h3>
+                <p>Inquiries get a reply within minutes, not days. Even when you're busy.</p>
+            </div>
+            <div class="value-card">
+                <div class="check">+</div>
+                <h3>Easy to use</h3>
+                <p>It's just a spreadsheet you already know how to use. No new software to learn.</p>
+            </div>
+            <div class="value-card">
+                <div class="check">+</div>
+                <h3>Better return on every lead</h3>
+                <p>More of your hard-earned leads turn into actual customers and revenue.</p>
+            </div>
+            <div class="value-card">
+                <div class="check">+</div>
+                <h3>More organized</h3>
+                <p>You know exactly where every lead stands and what needs to happen next.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <div class="container">
+        <p class="section-label">How it works</p>
+        <h2 class="section-title">Simple. No complicated setup.</h2>
+        <div class="steps">
+            <div class="step">
                 <div class="dot">1</div>
                 <div>
-                    <h3>A lead emails you about your services</h3>
-                    <p>Someone fills your form or sends you a direct email asking about pricing and availability.</p>
-                    <div class="email-preview">
-                        <div class="from">From: rachel.kim@gmail.com</div>
-                        <div class="body">Hi, I saw your site and I'm interested in your coaching program. Do you have availability next week? What are your rates?</div>
-                    </div>
+                    <h3>Someone fills your form or sends an email</h3>
+                    <p>They reach out however they reach out. We catch it and put it in your CRM automatically.</p>
                 </div>
             </div>
-            <div class="flow-step">
+            <div class="step">
                 <div class="dot">2</div>
                 <div>
-                    <h3>Receptionist reads the email and drafts a reply</h3>
-                    <p>We analyze the inquiry, pull your availability from your calendar, and write a personalized response ready to send.</p>
-                    <div class="email-preview">
-                        <div class="draft-tag">DRAFT READY -- HIT SEND</div>
-                        <div class="from">To: rachel.kim@gmail.com</div>
-                        <div class="body">Hi Rachel, thanks for reaching out! I have availability Tuesday and Thursday next week. My coaching program is $299/month, includes 4 sessions and unlimited messaging. Would you like me to send over a booking link?</div>
-                    </div>
+                    <h3>We send a fast reply to your lead</h3>
+                    <p>Your prospect gets a reply within minutes. They don't forget about you while you're busy.</p>
                 </div>
             </div>
-            <div class="flow-step">
+            <div class="step">
                 <div class="dot">3</div>
                 <div>
-                    <h3>You hit send. That's the whole job.</h3>
-                    <p>No typing. No switching tabs. The draft is in your inbox. You review it in 10 seconds, hit send, and the lead is handled.</p>
+                    <h3>You check your CRM when it's convenient</h3>
+                    <p>Your pipeline is right there. Every lead, every status, every next step. On your phone or computer.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="dot">4</div>
+                <div>
+                    <h3>You follow up and close the job</h3>
+                    <p>You're organized. You're consistent. You win more business because you actually follow up.</p>
                 </div>
             </div>
         </div>
@@ -370,77 +412,44 @@
 
 <section class="section">
     <div class="container">
-        <p class="section-label">Everything included</p>
-        <h2 class="section-title">The full package. Not a list of integrations.</h2>
-        <div class="features-grid">
-            <div class="feat">
-                <h3>Email drafting</h3>
-                <p>Every inquiry gets a drafted reply. Inbound leads, client questions, follow-ups. You approve. We send nothing without you.</p>
-            </div>
-            <div class="feat">
-                <h3>Lead intake</h3>
-                <p>New form submissions go straight to your CRM with a confirmation email sent to the lead immediately.</p>
-            </div>
-            <div class="feat">
-                <h3>Daily briefing</h3>
-                <p>Every morning: your calendar, tasks due, new leads, and draft replies waiting for your approval.</p>
-            </div>
-            <div class="feat">
-                <h3>Session reminders</h3>
-                <p>Clients get a reminder 24 hours before their session. No more missed appointments.</p>
-            </div>
-            <div class="feat">
-                <h3>Your live CRM</h3>
-                <p>Every lead tracked in your own dashboard. You see the full pipeline anytime. Source, status, last contact, value. All live.</p>
-            </div>
-            <div class="feat">
-                <h3>Follow-up sequences</h3>
-                <p>Hot leads get a sequence. Dormant leads get a nudge. You decide the rules. We run them.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-    <div class="container">
-        <p class="section-label">Your dashboard</p>
-        <h2 class="section-title">Your pipeline. Live. In your browser.</h2>
-        <p style="color:var(--muted);font-size:15px;margin-bottom:32px;">You get your own Google Sheet CRM. We automate everything going in. You check it whenever you want.</p>
-        <div class="crm-preview">
-            <div class="title">CRM Dashboard</div>
+        <p class="section-label">Real example</p>
+        <h2 class="section-title">What it looks like after 30 days.</h2>
+        <div class="example-box">
+            <h4>Pipeline Snapshot -- Mike's HVAC Service</h4>
             <table>
                 <tr>
-                    <th>Name</th>
-                    <th>Company</th>
+                    <th>Lead</th>
+                    <th>Source</th>
                     <th>Status</th>
                     <th>Value</th>
-                    <th>Last Contact</th>
                 </tr>
                 <tr>
-                    <td>Rachel Kim</td>
-                    <td>Kim Consulting</td>
-                    <td class="status-qualified">Qualified</td>
-                    <td>$2,400</td>
-                    <td>Today</td>
+                    <td>R. Thompson -- AC repair</td>
+                    <td>Google Form</td>
+                    <td>Follow-up today</td>
+                    <td>+ $380</td>
                 </tr>
                 <tr>
-                    <td>Marcus Johnson</td>
-                    <td>Johnson &amp; Co</td>
-                    <td class="status-new">New Inquiry</td>
-                    <td>$1,200</td>
-                    <td>Yesterday</td>
+                    <td>J. Patel -- new install</td>
+                    <td>Phone call</td>
+                    <td>Proposal sent</td>
+                    <td>+ $4,200</td>
                 </tr>
                 <tr>
-                    <td>Sarah Chen</td>
-                    <td>Chen Partners</td>
-                    <td class="status-won">Won</td>
-                    <td>$3,600</td>
-                    <td>3 days ago</td>
+                    <td>K. O'Brien -- maintenance</td>
+                    <td>Google Form</td>
+                    <td>Won -- booked</td>
+                    <td>+ $150</td>
+                </tr>
+                <tr>
+                    <td>L. Vargas -- referral</td>
+                    <td>Word of mouth</td>
+                    <td>Qualified -- call tomorrow</td>
+                    <td>+ $2,800</td>
                 </tr>
             </table>
         </div>
+        <p style="margin-top:16px;font-size:14px;color:var(--muted);text-align:center;">Before: 2 out of 10 leads became customers. After: 6 out of 10.</p>
     </div>
 </section>
 
@@ -456,23 +465,23 @@
                 <div class="price">$0 <span>/month</span></div>
                 <p class="desc">For one person getting started</p>
                 <ul>
-                    <li>Daily briefing (calendar + tasks)</li>
-                    <li>10 drafted replies/month</li>
-                    <li>Lead intake form</li>
-                    <li>Auto-confirmation to leads</li>
+                    <li>Up to 10 new leads/month</li>
+                    <li>Auto-reply to inquiries</li>
+                    <li>Simple CRM pipeline</li>
+                    <li>Daily summary email</li>
                 </ul>
             </div>
             <div class="price-card pro">
-                <span class="tag">MOST POPULAR</span>
+                <span class="tag">BEST</span>
                 <h3>Pro</h3>
                 <div class="price">$99 <span>/month</span></div>
-                <p class="desc">For coaches and consultants who are serious about growth</p>
+                <p class="desc">For businesses that want to grow</p>
                 <ul>
-                    <li>Unlimited drafted replies</li>
-                    <li>Your own live CRM dashboard</li>
-                    <li>Session reminders to clients</li>
+                    <li>Unlimited leads</li>
+                    <li>Full CRM with source tracking</li>
                     <li>Follow-up sequences</li>
-                    <li>Priority support</li>
+                    <li>ROI dashboard</li>
+                    <li>Priority setup</li>
                 </ul>
             </div>
         </div>
@@ -483,10 +492,10 @@
 
 <section class="cta-section">
     <div class="container">
-        <h2>You hit send. That's the job.</h2>
-        <p>Set up in 10 minutes. Your first drafted reply arrives today.</p>
+        <h2>More customers. Less work.</h2>
+        <p>Start today. Your first leads start flowing tomorrow.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
-            Get started free
+            Start free. No credit card.
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
     </div>
