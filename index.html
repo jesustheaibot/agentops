@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist -- Your Business Runs Better</title>
-    <meta name="description" content="More customers. Less work. Better results. Every inquiry followed up. Every lead tracked. Every follow-up fast.">
+    <title>Receptionist -- Built by Jesus and His Team</title>
+    <meta name="description" content="You were losing 3 jobs a month to competitors who just called back faster. Here's how you stop.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             --accent: #4f8ef7;
             --accent-dim: rgba(79,142,247,0.1);
             --green: #34d399;
-            --yellow: #fbbf24;
+            --red: #ef4444;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -32,7 +32,7 @@
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
         header {
             padding: 18px 0;
@@ -51,17 +51,19 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
             font-size: 18px;
         }
-        .logo-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
-            overflow: hidden;
+        .logo-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
         }
-        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-text { line-height: 1.2; }
+        .logo-text span { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
         .badge {
             font-size: 10px;
             font-weight: 600;
@@ -69,25 +71,38 @@
             color: #fff;
             padding: 2px 8px;
             border-radius: 4px;
+            letter-spacing: 0.5px;
         }
 
         .hero {
-            padding: 90px 0 70px;
+            padding: 80px 0 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 28px;
+            box-shadow: 0 0 60px rgba(79,142,247,0.2);
+        }
         .hero h1 {
-            font-size: 50px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.08;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: -2px;
         }
         .hero h1 .accent { color: var(--accent); }
         .hero .subhead {
-            font-size: 21px;
+            font-size: 20px;
             color: var(--muted);
-            max-width: 520px;
-            margin: 0 auto 36px;
+            max-width: 540px;
+            margin: 0 auto 32px;
             font-weight: 400;
             line-height: 1.55;
         }
@@ -110,10 +125,92 @@
             transform: translateY(-1px);
         }
         .hero-note {
-            margin-top: 14px;
+            margin-top: 12px;
             font-size: 13px;
             color: var(--muted);
         }
+
+        .problem {
+            background: linear-gradient(180deg, rgba(239,68,68,0.08) 0%, transparent 100%);
+            border-top: 1px solid rgba(239,68,68,0.2);
+            border-bottom: 1px solid rgba(239,68,68,0.2);
+            padding: 60px 0;
+        }
+        .problem h2 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #f87171;
+            letter-spacing: -1px;
+        }
+        .problem p {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .problem .stat {
+            display: inline-block;
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 8px;
+            padding: 16px 24px;
+            margin: 8px 8px 8px 0;
+            font-size: 14px;
+        }
+        .problem .stat strong { color: #f87171; font-size: 20px; display: block; }
+
+        .roi {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .roi h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        .roi .subtitle {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .roi-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .roi-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .roi-card .label { font-size: 14px; color: var(--muted); }
+        .roi-card .result { font-size: 13px; color: var(--green); margin-top: 8px; font-weight: 600; }
+
+        .roi-bottom {
+            background: var(--surface);
+            border: 1px solid var(--green);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .roi-bottom .big {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .roi-bottom p { font-size: 14px; color: var(--muted); }
 
         .divider { height: 1px; background: var(--border); }
 
@@ -127,46 +224,26 @@
             margin-bottom: 12px;
         }
         .section-title {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 700;
             margin-bottom: 40px;
             letter-spacing: -1px;
         }
-
-        /* Pain points */
-        .pain-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
-        .pain-card {
+        .feat {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 22px;
         }
-        .pain-card .x { color: #ef4444; font-size: 18px; margin-bottom: 8px; }
-        .pain-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-        .pain-card p { font-size: 13px; color: var(--muted); }
+        .feat h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .feat p { font-size: 13px; color: var(--muted); }
 
-        /* Value props */
-        .value-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .value-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
-        }
-        .value-card .check { color: var(--green); font-size: 18px; margin-bottom: 8px; }
-        .value-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-        .value-card p { font-size: 13px; color: var(--muted); }
-
-        /* How it works */
-        .steps { display: flex; flex-direction: column; gap: 16px; }
+        .steps { display: flex; flex-direction: column; gap: 14px; }
         .step {
             display: flex;
             gap: 18px;
@@ -193,33 +270,6 @@
         .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
         .step p { font-size: 13px; color: var(--muted); }
 
-        /* Example */
-        .example-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 16px;
-        }
-        .example-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
-        .example-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .example-box th {
-            text-align: left;
-            padding: 6px 10px;
-            border-bottom: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .example-box td {
-            padding: 6px 10px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-        }
-        .example-box td:last-child { color: var(--green); font-weight: 600; text-align: right; }
-
-        /* Pricing */
         .pricing { padding: 80px 0; }
         .pricing .grid {
             display: grid;
@@ -258,7 +308,6 @@
         .price-card ul li:last-child { border: none; }
         .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 8px; }
 
-        /* CTA */
         .cta-section { padding: 90px 0; text-align: center; }
         .cta-section h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
         .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 28px; }
@@ -275,8 +324,8 @@
         @media (max-width: 640px) {
             .hero h1 { font-size: 34px; }
             .section-title { font-size: 26px; }
-            .pain-grid { grid-template-columns: 1fr; }
-            .value-grid { grid-template-columns: 1fr; }
+            .roi-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
             .pricing .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -286,54 +335,70 @@
 <header>
     <div class="container">
         <div class="logo">
-            <div class="logo-icon">
-                <img src="assets/logo.png" alt="Receptionist">
+            <img src="assets/jesus.jpg" alt="Jesus" class="logo-avatar">
+            <div class="logo-text">
+                Receptionist
+                <span>Built by Jesus and His Team</span>
             </div>
-            Receptionist
-            <span class="badge">BETA</span>
         </div>
     </div>
 </header>
 
 <section class="hero">
+    <img src="assets/jesus.jpg" alt="Jesus" class="hero-avatar">
+    <h1>You were losing 3 jobs a month.<br><span class="accent">Here's how to stop.</span></h1>
+    <p class="subhead">Every inquiry gets a reply. Every lead gets tracked. Every follow-up is fast. Your business runs better -- even when you're busy.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
+        Start free. No credit card.
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="hero-note">Set up in 10 minutes. No complicated software.</p>
+</section>
+
+<section class="problem">
     <div class="container">
-        <h1>More customers.<br><span class="accent">Less work. Better results.</span></h1>
-        <p class="subhead">Every inquiry gets a response. Every lead gets tracked. Every follow-up is fast. Your business runs better, even when you're busy.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
-            Start free. No credit card.
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="hero-note">Set up in 10 minutes. No complicated software.<br>Or <a href="https://buy.stripe.com/00w8wObjbebT1FY26f9k402" target="_blank" style="color:var(--accent);">subscribe to Pro -- $99/month</a></p>
+        <h2>The problem isn't your work. It's the follow-up.</h2>
+        <p>You're great at your craft. But when you're on a job, your phone goes to voicemail. The lead calls the next person who picks up.</p>
+        <p>Sound familiar?</p>
+        <div class="stat">
+            <strong>60%</strong>
+            of leads never get a call back
+        </div>
+        <div class="stat">
+            <strong>35%</strong>
+            of appointments get missed due to no-shows
+        </div>
+        <div class="stat">
+            <strong>70%</strong>
+            of leads go cold after first contact
+        </div>
     </div>
 </section>
 
-<div class="divider"></div>
-
-<section class="section">
+<section class="roi">
     <div class="container">
-        <p class="section-label">Sound familiar?</p>
-        <h2 class="section-title">The gap between leads and customers is follow-up.</h2>
-        <div class="pain-grid">
-            <div class="pain-card">
-                <div class="x">x</div>
-                <h3>You lose jobs to competitors who just called back faster</h3>
-                <p>You were on a job. The inquiry sat for 2 days. They hired someone else.</p>
+        <h2>The math is simple.</h2>
+        <p class="subtitle">Most service businesses convert about 20% of leads to customers. Here is what changes with Receptionist.</p>
+        <div class="roi-grid">
+            <div class="roi-card">
+                <div class="number">10</div>
+                <div class="label">leads/month</div>
+                <div class="result">avg for a small service business</div>
             </div>
-            <div class="pain-card">
-                <div class="x">x</div>
-                <h3>You're organized for a week, then everything falls apart</h3>
-                <p>Spreadsheets and sticky notes stop working when things get busy.</p>
+            <div class="roi-card">
+                <div class="number">2</div>
+                <div class="label">customers/month (20%)</div>
+                <div class="result">without Receptionist</div>
             </div>
-            <div class="pain-card">
-                <div class="x">x</div>
-                <h3>You spend more time on admin than on your actual work</h3>
-                <p>The phone rings, you answer it, you lose the job because you're not there.</p>
+            <div class="roi-card">
+                <div class="number">5</div>
+                <div class="label">customers/month (50%)</div>
+                <div class="result">with Receptionist</div>
             </div>
-            <div class="pain-card">
-                <div class="x">x</div>
-                <h3>You have no idea where your best leads even come from</h3>
-                <p>Someone called. Did they find you on Google? Word of mouth? You never asked.</p>
-            </div>
+        </div>
+        <div class="roi-bottom">
+            <div class="big">+$1,500/mo</div>
+            <p>Extra revenue at $500 avg job. Receptionist costs $99/mo. Net gain: $1,401.</p>
         </div>
     </div>
 </section>
@@ -344,24 +409,20 @@
     <div class="container">
         <p class="section-label">What you get</p>
         <h2 class="section-title">Built for how you actually work.</h2>
-        <div class="value-grid">
-            <div class="value-card">
-                <div class="check">+</div>
-                <h3>Fast follow-up, every time</h3>
-                <p>Inquiries get a reply within minutes, not days. Even when you're busy.</p>
+        <div class="features-grid">
+            <div class="feat">
+                <h3>Fast reply, every time</h3>
+                <p>Inquiries get a reply within minutes. Even when you are on a job and cannot answer your phone.</p>
             </div>
-            <div class="value-card">
-                <div class="check">+</div>
+            <div class="feat">
                 <h3>Easy to use</h3>
-                <p>It's just a spreadsheet you already know how to use. No new software to learn.</p>
+                <p>It is just a spreadsheet you already know how to use. No new software to learn.</p>
             </div>
-            <div class="value-card">
-                <div class="check">+</div>
-                <h3>Better return on every lead</h3>
+            <div class="feat">
+                <h3>More customers</h3>
                 <p>More of your hard-earned leads turn into actual customers and revenue.</p>
             </div>
-            <div class="value-card">
-                <div class="check">+</div>
+            <div class="feat">
                 <h3>More organized</h3>
                 <p>You know exactly where every lead stands and what needs to happen next.</p>
             </div>
@@ -374,82 +435,30 @@
 <section class="section">
     <div class="container">
         <p class="section-label">How it works</p>
-        <h2 class="section-title">Simple. No complicated setup.</h2>
+        <h2 class="section-title">Three steps. That is it.</h2>
         <div class="steps">
             <div class="step">
                 <div class="dot">1</div>
                 <div>
-                    <h3>Someone fills your form or sends an email</h3>
-                    <p>They reach out however they reach out. We catch it and put it in your CRM automatically.</p>
+                    <h3>Someone reaches out</h3>
+                    <p>They fill your form or send an email. We catch it and put it in your CRM automatically.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="dot">2</div>
                 <div>
-                    <h3>We send a fast reply to your lead</h3>
-                    <p>Your prospect gets a reply within minutes. They don't forget about you while you're busy.</p>
+                    <h3>We send a fast reply</h3>
+                    <p>Your lead gets a response within minutes. They do not forget about you while you are busy.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="dot">3</div>
                 <div>
-                    <h3>You check your CRM when it's convenient</h3>
-                    <p>Your pipeline is right there. Every lead, every status, every next step. On your phone or computer.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="dot">4</div>
-                <div>
-                    <h3>You follow up and close the job</h3>
-                    <p>You're organized. You're consistent. You win more business because you actually follow up.</p>
+                    <h3>You follow up and close</h3>
+                    <p>You check your pipeline, follow up, and close the job. Organized. Consistent. Every time.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-    <div class="container">
-        <p class="section-label">Real example</p>
-        <h2 class="section-title">What it looks like after 30 days.</h2>
-        <div class="example-box">
-            <h4>Pipeline Snapshot -- Mike's HVAC Service</h4>
-            <table>
-                <tr>
-                    <th>Lead</th>
-                    <th>Source</th>
-                    <th>Status</th>
-                    <th>Value</th>
-                </tr>
-                <tr>
-                    <td>R. Thompson -- AC repair</td>
-                    <td>Google Form</td>
-                    <td>Follow-up today</td>
-                    <td>+ $380</td>
-                </tr>
-                <tr>
-                    <td>J. Patel -- new install</td>
-                    <td>Phone call</td>
-                    <td>Proposal sent</td>
-                    <td>+ $4,200</td>
-                </tr>
-                <tr>
-                    <td>K. O'Brien -- maintenance</td>
-                    <td>Google Form</td>
-                    <td>Won -- booked</td>
-                    <td>+ $150</td>
-                </tr>
-                <tr>
-                    <td>L. Vargas -- referral</td>
-                    <td>Word of mouth</td>
-                    <td>Qualified -- call tomorrow</td>
-                    <td>+ $2,800</td>
-                </tr>
-            </table>
-        </div>
-        <p style="margin-top:16px;font-size:14px;color:var(--muted);text-align:center;">Before: 2 out of 10 leads became customers. After: 6 out of 10.</p>
     </div>
 </section>
 
@@ -492,19 +501,20 @@
 
 <section class="cta-section">
     <div class="container">
-        <h2>More customers. Less work.</h2>
-        <p>Start today. Your first leads start flowing tomorrow.</p>
+        <h2>Stop losing jobs to slow follow-up.</h2>
+        <p>Start today. Your first leads start converting tomorrow.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
             Start free. No credit card.
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p style="margin-top:12px;color:var(--muted);font-size:14px;">or <a href="https://buy.stripe.com/00w8wObjbebT1FY26f9k402" target="_blank" style="color:var(--accent);">subscribe to Pro -- $99/month</a></p>
+        <p style="margin-top:16px;color:var(--muted);font-size:14px;">or <a href="https://buy.stripe.com/00w8wObjbebT1FY26f9k402" target="_blank" style="color:var(--accent);">subscribe to Pro -- $99/month</a></p>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>Receptionist -- jesustheaibot@gmail.com</p>
+        <p>Receptionist -- Built by Jesus and His Team</p>
+        <p>jesustheaibot@gmail.com</p>
     </div>
 </footer>
 
