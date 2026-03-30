@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist -- Your AI Front Desk for Coaching & Consulting</title>
-    <meta name="description" content="Every new lead gets a response in 24 hours. Every client gets a reminder before their session. Every follow-up happens without you touching it.">
+    <title>Receptionist -- Your AI Executive Assistant</title>
+    <meta name="description" content="Every email gets a drafted reply. Every lead gets followed up. Every client gets reminded. You hit send. That's the job.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0a0a0f;
-            --surface: #12121a;
-            --surface2: #1a1a24;
+            --bg: #080810;
+            --surface: #10101a;
+            --surface2: #181822;
             --border: #222230;
             --text: #f0f0f5;
             --muted: #8888a0;
-            --accent: #3b82f6;
-            --accent-dim: rgba(59,130,246,0.12);
-            --green: #22c55e;
-            --red: #ef4444;
+            --accent: #4f8ef7;
+            --accent-dim: rgba(79,142,247,0.1);
+            --green: #34d399;
+            --yellow: #fbbf24;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -36,12 +36,12 @@
 
         /* Header */
         header {
-            padding: 20px 0;
+            padding: 18px 0;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: rgba(10,10,15,0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(8,8,16,0.96);
+            backdrop-filter: blur(12px);
             z-index: 100;
         }
         header .container {
@@ -55,11 +55,15 @@
             gap: 10px;
             font-weight: 800;
             font-size: 18px;
-            color: var(--text);
         }
-        .logo img { width: 32px; height: 32px; border-radius: 6px; }
-        .logo-text span { color: var(--accent); }
-
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
         .badge {
             font-size: 10px;
             font-weight: 600;
@@ -72,13 +76,13 @@
 
         /* Hero */
         .hero {
-            padding: 100px 0 80px;
+            padding: 90px 0 70px;
             text-align: center;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 50px;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.08;
             margin-bottom: 20px;
             letter-spacing: -2px;
         }
@@ -86,9 +90,10 @@
         .hero .subhead {
             font-size: 20px;
             color: var(--muted);
-            max-width: 540px;
+            max-width: 520px;
             margin: 0 auto 36px;
             font-weight: 400;
+            line-height: 1.5;
         }
         .hero-cta {
             display: inline-flex;
@@ -101,22 +106,22 @@
             font-weight: 600;
             font-size: 16px;
             transition: all 0.2s;
-            box-shadow: 0 0 30px rgba(59,130,246,0.2);
+            box-shadow: 0 0 40px rgba(79,142,247,0.25);
         }
         .hero-cta:hover {
-            background: #2563eb;
+            background: #6b9df8;
             text-decoration: none;
             transform: translateY(-1px);
         }
         .hero-note {
-            margin-top: 16px;
+            margin-top: 14px;
             font-size: 13px;
             color: var(--muted);
         }
 
         .divider { height: 1px; background: var(--border); }
 
-        /* Problem */
+        /* Use case */
         .section { padding: 80px 0; }
         .section-label {
             font-size: 12px;
@@ -133,38 +138,24 @@
             letter-spacing: -1px;
         }
 
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+        /* Use case flow */
+        .flow {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .problem-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-        }
-        .problem-card .icon {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-        .problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .problem-card p { font-size: 14px; color: var(--muted); }
-
-        /* How it works */
-        .steps { display: flex; flex-direction: column; gap: 16px; }
-        .step {
+        .flow-step {
             display: flex;
             gap: 20px;
             align-items: flex-start;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 24px;
         }
-        .step-num {
-            width: 36px;
-            height: 36px;
+        .flow-step .dot {
+            width: 32px;
+            height: 32px;
             background: var(--accent-dim);
             border: 1px solid var(--accent);
             border-radius: 50%;
@@ -172,79 +163,49 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--accent);
             flex-shrink: 0;
         }
-        .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-        .step p { font-size: 14px; color: var(--muted); }
-
-        /* What you get */
-        .what-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-        .what-card {
-            background: var(--surface);
+        .flow-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .flow-step p { font-size: 14px; color: var(--muted); }
+        .flow-step .email-preview {
+            margin-top: 12px;
+            background: var(--surface2);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-        .what-card .icon { font-size: 28px; margin-bottom: 12px; }
-        .what-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-        .what-card p { font-size: 13px; color: var(--muted); }
-
-        /* Sample email */
-        .sample-section { padding: 80px 0; }
-        .sample-email {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-            max-width: 600px;
-            font-size: 14px;
-        }
-        .email-header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 14px;
-            margin-bottom: 18px;
-        }
-        .email-header .from { font-weight: 700; }
-        .email-header .date { color: var(--muted); float: right; font-size: 12px; }
-        .email-header .subject { color: var(--muted); font-size: 13px; margin-top: 4px; }
-        .email-body h2 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-        }
-        .email-body .block { margin-bottom: 14px; }
-        .email-body .block-title {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-        .email-body ul {
-            list-style: none;
+            border-radius: 8px;
+            padding: 14px;
             font-size: 13px;
-            color: var(--muted);
         }
-        .email-body ul li { padding: 4px 0; }
-        .email-body ul li::before { content: "• "; color: var(--accent); margin-right: 6px; }
-        .email-footer {
-            margin-top: 20px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
-            font-size: 12px;
-            color: var(--muted);
-            text-align: center;
+        .flow-step .email-preview .from { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+        .flow-step .email-preview .body { color: var(--text); line-height: 1.5; }
+        .draft-tag {
+            display: inline-block;
+            background: rgba(79,142,247,0.15);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
         }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .feat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+        }
+        .feat h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .feat p { font-size: 13px; color: var(--muted); }
 
         /* Pricing */
         .pricing { padding: 80px 0; }
@@ -252,19 +213,19 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            max-width: 600px;
+            max-width: 580px;
             margin: 0 auto;
         }
         .price-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 36px 28px;
+            padding: 32px 26px;
             text-align: center;
         }
         .price-card.pro {
             border-color: var(--accent);
-            box-shadow: 0 0 40px rgba(59,130,246,0.1);
+            box-shadow: 0 0 40px rgba(79,142,247,0.08);
         }
         .price-card .tag {
             display: inline-block;
@@ -274,21 +235,21 @@
             font-weight: 700;
             padding: 4px 12px;
             border-radius: 20px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
-        .price-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-        .price-card .price { font-size: 44px; font-weight: 800; margin-bottom: 4px; }
+        .price-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+        .price-card .price { font-size: 42px; font-weight: 800; margin-bottom: 4px; }
         .price-card .price span { font-size: 14px; font-weight: 400; color: var(--muted); }
-        .price-card .desc { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+        .price-card .desc { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
         .price-card ul { list-style: none; text-align: left; font-size: 13px; }
-        .price-card ul li { padding: 7px 0; border-bottom: 1px solid var(--border); }
+        .price-card ul li { padding: 6px 0; border-bottom: 1px solid var(--border); }
         .price-card ul li:last-child { border: none; }
         .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 8px; }
 
         /* CTA */
-        .cta-section { padding: 100px 0; text-align: center; }
-        .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
-        .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 30px; }
+        .cta-section { padding: 90px 0; text-align: center; }
+        .cta-section h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
+        .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 28px; }
 
         /* Footer */
         footer {
@@ -303,8 +264,7 @@
         @media (max-width: 640px) {
             .hero h1 { font-size: 34px; }
             .section-title { font-size: 26px; }
-            .problem-grid { grid-template-columns: 1fr; }
-            .what-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
             .pricing .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -314,21 +274,24 @@
 <header>
     <div class="container">
         <div class="logo">
-            <img src="assets/logo.png" alt="Receptionist" width="32" height="32" style="border-radius:6px;">
-            <div class="logo-text">Receptionist <span class="badge">BETA</span></div>
+            <div class="logo-icon">
+                <img src="assets/logo.png" alt="Receptionist">
+            </div>
+            Receptionist
+            <span class="badge">BETA</span>
         </div>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <h1>Your front desk.<br><span class="accent">Run on autopilot.</span></h1>
-        <p class="subhead">Every new inquiry gets a response. Every client gets a reminder. Every follow-up happens without you touching it. No staff. No missed leads.</p>
+        <h1>Your inbox.<br><span class="accent">Receptionist drafts the reply.</span></h1>
+        <p class="subhead">Every email gets a drafted response. You read it, hit send. Every lead gets followed up. Every client gets reminded. You stay in control.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
             Start free. No credit card.
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p class="hero-note">Connects to your calendar and forms. We never touch your email.</p>
+        <p class="hero-note">Connects to your Google account. We draft. You send. That's it.</p>
     </div>
 </section>
 
@@ -336,59 +299,38 @@
 
 <section class="section">
     <div class="container">
-        <p class="section-label">The problem</p>
-        <h2 class="section-title">You're great at your craft. Terrible at the follow-up.</h2>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <div class="icon">🕐</div>
-                <h3>Inquiries go cold</h3>
-                <p>Someone fills out your form. You see it 3 days later. They've already hired someone else.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">📅</div>
-                <h3>Sessions get missed</h3>
-                <p>No reminder goes out. Client forgets. You lose the session and the trust.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">📋</div>
-                <h3>Onboarding is a mess</h3>
-                <p>Five emails back and forth to get them scheduled, invoiced, and set up.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">💸</div>
-                <h3>You chase payments</h3>
-                <p>You forget to invoice. You forget to follow up. Cash flow suffers.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        <p class="section-label">What it actually does</p>
+        <h2 class="section-title">See it in action.</h2>
 
-<div class="divider"></div>
-
-<section class="section">
-    <div class="container">
-        <p class="section-label">How it works</p>
-        <h2 class="section-title">Three things. Running automatically.</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">1</div>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="dot">1</div>
                 <div>
-                    <h3>New inquiry arrives</h3>
-                    <p>Someone fills your intake form. We add them to your CRM, send a confirmation immediately, and flag them for follow-up.</p>
+                    <h3>A lead emails you about your services</h3>
+                    <p>Someone fills your form or sends you a direct email asking about pricing and availability.</p>
+                    <div class="email-preview">
+                        <div class="from">From: rachel.kim@gmail.com</div>
+                        <div class="body">Hi, I saw your site and I'm interested in your coaching program. Do you have availability next week? What are your rates?</div>
+                    </div>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-num">2</div>
+            <div class="flow-step">
+                <div class="dot">2</div>
                 <div>
-                    <h3>Daily briefing hits your inbox</h3>
-                    <p>Every morning: your calendar, your tasks for the day, and any new inquiries. One email. Two minutes. You know what matters.</p>
+                    <h3>Receptionist reads the email and drafts a reply</h3>
+                    <p>We analyze the inquiry, pull your availability from your calendar, and write a personalized response ready to send.</p>
+                    <div class="email-preview">
+                        <div class="draft-tag">DRAFT READY -- HIT SEND</div>
+                        <div class="from">To: rachel.kim@gmail.com</div>
+                        <div class="body">Hi Rachel, thanks for reaching out! I have availability Tuesday and Thursday next week. My coaching program is $299/month, includes 4 sessions and unlimited messaging. Would you like me to send over a booking link?</div>
+                    </div>
                 </div>
             </div>
-            <div class="step">
-                <div class="step-num">3</div>
+            <div class="flow-step">
+                <div class="dot">3</div>
                 <div>
-                    <h3>Reminders go out automatically</h3>
-                    <p>Clients get a reminder 24 hours before their session. You never chase anyone again.</p>
+                    <h3>You hit send. That's the whole job.</h3>
+                    <p>No typing. No switching tabs. The draft is in your inbox. You review it in 10 seconds, hit send, and the lead is handled.</p>
                 </div>
             </div>
         </div>
@@ -399,66 +341,33 @@
 
 <section class="section">
     <div class="container">
-        <p class="section-label">What you receive</p>
-        <h2 class="section-title">Everything in one morning email.</h2>
-        <div class="what-grid">
-            <div class="what-card">
-                <div class="icon">📅</div>
-                <h3>Calendar</h3>
-                <p>Today's sessions and appointments</p>
+        <p class="section-label">Everything included</p>
+        <h2 class="section-title">The full package. Not a list of integrations.</h2>
+        <div class="features-grid">
+            <div class="feat">
+                <h3>Email drafting</h3>
+                <p>Every inquiry gets a drafted reply. Inbound leads, client questions, follow-ups. You approve. We send nothing without you.</p>
             </div>
-            <div class="what-card">
-                <div class="icon">✅</div>
-                <h3>Tasks</h3>
-                <p>What's due today from your lists</p>
+            <div class="feat">
+                <h3>Lead intake</h3>
+                <p>New form submissions go straight to your CRM with a confirmation email sent to the lead immediately.</p>
             </div>
-            <div class="what-card">
-                <div class="icon">📝</div>
-                <h3>New Leads</h3>
-                <p>Anyone who filled your form since yesterday</p>
+            <div class="feat">
+                <h3>Daily briefing</h3>
+                <p>Every morning: your calendar, tasks due, new leads, and draft replies waiting for your approval.</p>
             </div>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="sample-section">
-    <div class="container">
-        <p class="section-label">The briefing</p>
-        <h2 class="section-title" style="margin-bottom:24px;">What lands in your inbox every morning.</h2>
-        <div class="sample-email">
-            <div class="email-header">
-                <span class="from">Receptionist &lt;noreply@tid.ai&gt;</span>
-                <span class="date">Mon, Mar 30</span>
-                <div class="subject">Your briefing -- March 30, 2026</div>
+            <div class="feat">
+                <h3>Session reminders</h3>
+                <p>Clients get a reminder 24 hours before their session. No more missed appointments.</p>
             </div>
-            <div class="email-body">
-                <h2>Your Morning Briefing</h2>
-                <div class="block">
-                    <div class="block-title">Calendar Today</div>
-                    <ul>
-                        <li>10:00 AM -- Strategy session (client call)</li>
-                        <li>2:00 PM -- Q4 planning (team meeting)</li>
-                        <li>4:30 PM -- Available</li>
-                    </ul>
-                </div>
-                <div class="block">
-                    <div class="block-title">Tasks Due</div>
-                    <ul>
-                        <li>Follow up with Sarah Chen -- Q4 proposal</li>
-                        <li>Send onboarding docs to new client</li>
-                    </ul>
-                </div>
-                <div class="block">
-                    <div class="block-title">New Inquiries</div>
-                    <ul>
-                        <li>Rachel Kim -- Interested in group coaching program</li>
-                        <li>Marcus Johnson -- Wants to discuss enterprise package</li>
-                    </ul>
-                </div>
+            <div class="feat">
+                <h3>CRM pipeline</h3>
+                <p>Every lead tracked from first contact to closed deal. Source, status, last contact, notes. All in one sheet.</p>
             </div>
-            <div class="email-footer">Receptionist -- Your AI front desk. Never miss a lead again.</div>
+            <div class="feat">
+                <h3>Follow-up sequences</h3>
+                <p>Hot leads get a sequence. Dormant leads get a nudge. You decide the rules. We run them.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -473,22 +382,22 @@
             <div class="price-card">
                 <h3>Starter</h3>
                 <div class="price">$0 <span>/month</span></div>
-                <p class="desc">For one person, up to 10 new leads/month</p>
+                <p class="desc">For one person getting started</p>
                 <ul>
                     <li>Daily briefing (calendar + tasks)</li>
-                    <li>10 leads/month</li>
-                    <li>Intake form</li>
-                    <li>Auto-confirmation email</li>
+                    <li>10 drafted replies/month</li>
+                    <li>Lead intake form</li>
+                    <li>Auto-confirmation to leads</li>
                 </ul>
             </div>
             <div class="price-card pro">
-                <span class="tag">BEST</span>
+                <span class="tag">MOST POPULAR</span>
                 <h3>Pro</h3>
                 <div class="price">$99 <span>/month</span></div>
                 <p class="desc">For coaches and consultants who are serious about growth</p>
                 <ul>
-                    <li>Unlimited leads</li>
-                    <li>CRM with full history</li>
+                    <li>Unlimited drafted replies</li>
+                    <li>Full CRM with pipeline tracking</li>
                     <li>Session reminders to clients</li>
                     <li>Follow-up sequences</li>
                     <li>Priority support</li>
@@ -502,8 +411,8 @@
 
 <section class="cta-section">
     <div class="container">
-        <h2>No staff. No missed leads.</h2>
-        <p>Set up in 10 minutes. Your first briefing arrives tomorrow morning.</p>
+        <h2>You hit send. That's the job.</h2>
+        <p>Set up in 10 minutes. Your first drafted reply arrives today.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
             Get started free
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
