@@ -48,7 +48,7 @@ async function setupClientCRM(clientName, clientEmail) {
 
   // Share with client
   try {
-    gog(`drive share "${sheetId}" "${clientEmail}" --role writer --type user`);
+    gog(`drive share "${sheetId}" --email "${clientEmail}" --role writer --to user`);
     console.log(`[CRM] Shared with ${clientEmail}`);
   } catch (e) {
     console.log(`[CRM] Share warning: ${e.message}`);
