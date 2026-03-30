@@ -165,9 +165,44 @@
             max-width: 900px;
             border-radius: 12px;
             margin: 0 auto 40px;
-            display: block;
+            display: none;
             border: 1px solid var(--border);
         }
+
+        .workflow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0 48px;
+            flex-wrap: wrap;
+        }
+        .wf-step {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            width: 140px;
+        }
+        .wf-num {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--accent);
+            margin: 0 auto 10px;
+        }
+        .wf-icon { font-size: 28px; margin-bottom: 8px; }
+        .wf-label { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+        .wf-desc { font-size: 11px; color: var(--muted); }
+        .wf-arrow { font-size: 24px; color: var(--accent); font-weight: 300; }
 
         .roi {
             padding: 80px 0;
@@ -468,7 +503,36 @@
                 </div>
             </div>
         </div>
-        <img src="assets/workflow.png" alt="How Receptionist works" class="workflow-img">
+        <img src="assets/workflow.png" alt="How Receptionist works" class="workflow-img" style="display:none;">
+        <div class="workflow-diagram">
+            <div class="wf-step">
+                <div class="wf-num">1</div>
+                <div class="wf-icon">📋</div>
+                <div class="wf-label">Lead fills your form</div>
+                <div class="wf-desc">From phone or desktop</div>
+            </div>
+            <div class="wf-arrow">&#8594;</div>
+            <div class="wf-step">
+                <div class="wf-num">2</div>
+                <div class="wf-icon">📊</div>
+                <div class="wf-label">CRM updates instantly</div>
+                <div class="wf-desc">Name, email, company, source</div>
+            </div>
+            <div class="wf-arrow">&#8594;</div>
+            <div class="wf-step">
+                <div class="wf-num">3</div>
+                <div class="wf-icon">📧</div>
+                <div class="wf-label">Welcome email fires</div>
+                <div class="wf-desc">Auto-sent to your lead</div>
+            </div>
+            <div class="wf-arrow">&#8594;</div>
+            <div class="wf-step">
+                <div class="wf-num">4</div>
+                <div class="wf-icon">📬</div>
+                <div class="wf-label">Daily briefing to you</div>
+                <div class="wf-desc">Calendar, tasks, new leads</div>
+            </div>
+        </div>
     </div>
 </section>
 
