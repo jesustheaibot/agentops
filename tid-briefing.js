@@ -55,7 +55,7 @@ async function run() {
   let forms = 'No new form responses.';
   try {
     const FORM_ID = '1V7RibEgv1snA77zJ6y5mmeeqB8sayQFcbd2tYnGXZ6Q';
-    const formData = gog(`forms responses ${FORM_ID}`);
+    const formData = gog(`forms responses list ${FORM_ID}`);
     if (formData.trim() && !formData.includes('no responses')) {
       forms = formData.trim();
     }
