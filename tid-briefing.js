@@ -50,11 +50,12 @@ async function run() {
   let tasks = 'No tasks due today.';
   try {
     const taskData = gog('tasks lists');
-    if (taskData.includes('My Tasks')) {
-      const lists = taskData.split('\n').filter(l => l.includes('ID'));
-      if (lists.length > 0) {
-        const listId = lists[0].split('\t')[0];
-        const taskList = gog(`tasks list ${listId}`);
+    const lines = taskData.trim().split('\n');
+    if (lines.length >= 2) {
+      const cols = lines[1].split('\t');
+      if (cols.length >= 1) {
+        const listId = cols[0].trim();
+        const taskList = gog(`tasks list "${listId}"`);
         if (taskList.trim()) tasks = taskList.trim();
       }
     }
