@@ -246,6 +246,35 @@
         .price-card ul li:last-child { border: none; }
         .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 8px; }
 
+        .crm-preview {
+            margin-top: 16px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 12px;
+            text-align: left;
+        }
+        .crm-preview .title { font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .crm-preview table { width: 100%; border-collapse: collapse; }
+        .crm-preview th {
+            text-align: left;
+            padding: 4px 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .crm-preview td {
+            padding: 4px 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .crm-preview .status-new { color: var(--accent); }
+        .crm-preview .status-qualified { color: var(--yellow); }
+        .crm-preview .status-won { color: var(--green); }
+
         /* CTA */
         .cta-section { padding: 90px 0; text-align: center; }
         .cta-section h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
@@ -361,13 +390,56 @@
                 <p>Clients get a reminder 24 hours before their session. No more missed appointments.</p>
             </div>
             <div class="feat">
-                <h3>CRM pipeline</h3>
-                <p>Every lead tracked from first contact to closed deal. Source, status, last contact, notes. All in one sheet.</p>
+                <h3>Your live CRM</h3>
+                <p>Every lead tracked in your own dashboard. You see the full pipeline anytime. Source, status, last contact, value. All live.</p>
             </div>
             <div class="feat">
                 <h3>Follow-up sequences</h3>
                 <p>Hot leads get a sequence. Dormant leads get a nudge. You decide the rules. We run them.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <div class="container">
+        <p class="section-label">Your dashboard</p>
+        <h2 class="section-title">Your pipeline. Live. In your browser.</h2>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:32px;">You get your own Google Sheet CRM. We automate everything going in. You check it whenever you want.</p>
+        <div class="crm-preview">
+            <div class="title">CRM Dashboard</div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Value</th>
+                    <th>Last Contact</th>
+                </tr>
+                <tr>
+                    <td>Rachel Kim</td>
+                    <td>Kim Consulting</td>
+                    <td class="status-qualified">Qualified</td>
+                    <td>$2,400</td>
+                    <td>Today</td>
+                </tr>
+                <tr>
+                    <td>Marcus Johnson</td>
+                    <td>Johnson &amp; Co</td>
+                    <td class="status-new">New Inquiry</td>
+                    <td>$1,200</td>
+                    <td>Yesterday</td>
+                </tr>
+                <tr>
+                    <td>Sarah Chen</td>
+                    <td>Chen Partners</td>
+                    <td class="status-won">Won</td>
+                    <td>$3,600</td>
+                    <td>3 days ago</td>
+                </tr>
+            </table>
         </div>
     </div>
 </section>
@@ -397,7 +469,7 @@
                 <p class="desc">For coaches and consultants who are serious about growth</p>
                 <ul>
                     <li>Unlimited drafted replies</li>
-                    <li>Full CRM with pipeline tracking</li>
+                    <li>Your own live CRM dashboard</li>
                     <li>Session reminders to clients</li>
                     <li>Follow-up sequences</li>
                     <li>Priority support</li>
