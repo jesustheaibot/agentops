@@ -1,0 +1,24 @@
+name: TID Nightly Briefing Trigger
+
+on:
+  schedule:
+    - cron: "0 5 * * *"  # 5 AM UTC = midnight EST
+
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  trigger-briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger briefing webhook
+        run: |
+          # Wake up the briefing script endpoint
+          # Replace BRIEFING_URL with actual endpoint when available
+          curl -X POST "${{ secrets.BRIEFING_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{"trigger": "nightly", "source": "github-actions"}'
+        env:
+          BRIEFING_WEBHOOK_URL: ${{ secrets.BRIEFING_WEBHOOK_URL }}
+
+      - name: Log trigger time
+        run: echo "Briefing triggered at $(date -u)"
