@@ -82,16 +82,18 @@ async function run() {
       // Send welcome email
       const welcomeBody = `Hi ${name},
 
-Thanks for reaching out. We've received your inquiry and someone from our team will be in touch within 24 hours.
+Thanks for requesting your 5 free leads. We've got your info and we're starting the search.
 
-What happens next:
-- We'll review your submission and reach out to schedule a call if there's a good fit
-- If we're a match, you'll get a onboarding guide and we'll set up your first session
+Here's what happens next:
+- We'll research businesses in your area that need ${service || 'your service'}
+- Within 48 hours, we'll send you 5 real leads with contact info
+- You make the calls, close the jobs
+- If those leads are valuable, we continue delivering leads at $99/month
 
-In the meantime, feel free to reply with any questions.
+We'll be in touch shortly with your first leads.
 
 Best,
-The Team`;
+Jesus and the Receptionist Team`;
 
       sendEmail(email, 'Thanks for reaching out -- we received your submission', welcomeBody);
       console.log(`[Email] Welcome sent to ${email}`);
