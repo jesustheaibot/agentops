@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist -- Built by Jesus and His Team</title>
-    <meta name="description" content="You were losing 3 jobs a month to competitors who just called back faster. Here's how you stop.">
+    <title>Receptionist -- 5 Free Leads. No Catch.</title>
+    <meta name="description" content="We find your next 5 customers. You see the results. Then you decide if it's worth $99/month.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
             --accent: #4f8ef7;
             --accent-dim: rgba(79,142,247,0.1);
             --green: #34d399;
-            --red: #ef4444;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -64,13 +63,13 @@
             border: 2px solid var(--accent);
         }
         .logo-text { line-height: 1.2; }
-        .logo-text span { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+        .logo-text span { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
         .badge {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
-            background: var(--accent);
-            color: #fff;
-            padding: 2px 8px;
+            background: var(--green);
+            color: #000;
+            padding: 3px 10px;
             border-radius: 4px;
             letter-spacing: 0.5px;
         }
@@ -111,162 +110,36 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--accent);
-            color: #fff;
+            background: var(--green);
+            color: #000;
             padding: 18px 40px;
             border-radius: 10px;
-            font-weight: 600;
-            font-size: 18px;
+            font-weight: 700;
+            font-size: 20px;
             transition: all 0.2s;
-            box-shadow: 0 0 40px rgba(79,142,247,0.25);
+            box-shadow: 0 0 40px rgba(52,211,153,0.25);
         }
         .hero-cta:hover {
-            background: #6b9df8;
+            background: #4ade80;
             text-decoration: none;
             transform: translateY(-1px);
         }
         .hero-note {
-            margin-top: 12px;
-            font-size: 13px;
+            margin-top: 14px;
+            font-size: 15px;
             color: var(--muted);
         }
-
-        .problem {
-            background: linear-gradient(180deg, rgba(239,68,68,0.08) 0%, transparent 100%);
-            border-top: 1px solid rgba(239,68,68,0.2);
-            border-bottom: 1px solid rgba(239,68,68,0.2);
-            padding: 60px 0;
-        }
-        .problem h2 {
-            font-size: 30px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            color: #f87171;
-            letter-spacing: -1px;
-        }
-        .problem p {
-            font-size: 20px;
-            color: var(--muted);
-            max-width: 680px;
-            margin-bottom: 22px;
-        }
-        .problem .stat {
-            display: inline-block;
-            background: rgba(239,68,68,0.15);
-            border: 1px solid rgba(239,68,68,0.3);
-            border-radius: 8px;
-            padding: 20px 28px;
-            margin: 10px 10px 10px 0;
-            font-size: 16px;
-        }
-        .problem .stat strong { color: #f87171; font-size: 26px; display: block; }
-
-        .workflow-img {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 12px;
-            margin: 0 auto 40px;
-            display: none;
-            border: 1px solid var(--border);
-        }
-
-        .workflow-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin: 32px 0 48px;
-            flex-wrap: wrap;
-        }
-        .wf-step {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px 20px;
-            text-align: center;
-            width: 160px;
-        }
-        .wf-num {
-            width: 32px;
-            height: 32px;
-            background: var(--accent-dim);
-            border: 1px solid var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--accent);
-            margin: 0 auto 12px;
-        }
-        .wf-icon { font-size: 36px; margin-bottom: 10px; }
-        .wf-label { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-        .wf-desc { font-size: 13px; color: var(--muted); }
-        .wf-arrow { font-size: 28px; color: var(--accent); font-weight: 300; }
-
-        .roi {
-            padding: 80px 0;
-            text-align: center;
-        }
-        .roi h2 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-        .roi .subtitle {
-            color: var(--muted);
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-        .roi-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-        .roi-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-        }
-        .roi-card .number {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-        .roi-card .label { font-size: 16px; color: var(--muted); }
-        .roi-card .result { font-size: 15px; color: var(--green); margin-top: 8px; font-weight: 600; }
-
-        .roi-bottom {
-            background: var(--surface);
-            border: 1px solid var(--green);
-            border-radius: 12px;
-            padding: 24px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .roi-bottom .big {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--green);
-            margin-bottom: 8px;
-        }
-        .roi-bottom p { font-size: 14px; color: var(--muted); }
 
         .divider { height: 1px; background: var(--border); }
 
         .section { padding: 80px 0; }
         .section-label {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--accent);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .section-title {
             font-size: 38px;
@@ -274,33 +147,21 @@
             margin-bottom: 40px;
             letter-spacing: -1px;
         }
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .feat {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
-        }
-        .feat h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-        .feat p { font-size: 15px; color: var(--muted); }
 
-        .steps { display: flex; flex-direction: column; gap: 14px; }
+        /* How it works */
+        .steps { display: flex; flex-direction: column; gap: 16px; }
         .step {
             display: flex;
-            gap: 18px;
+            gap: 20px;
             align-items: flex-start;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 22px;
+            border-radius: 14px;
+            padding: 26px;
         }
         .step .dot {
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             background: var(--accent-dim);
             border: 1px solid var(--accent);
             border-radius: 50%;
@@ -308,69 +169,91 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 15px;
             color: var(--accent);
             flex-shrink: 0;
         }
-        .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-        .step p { font-size: 15px; color: var(--muted); }
+        .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .step p { font-size: 17px; color: var(--muted); }
 
+        /* Free lead box */
+        .free-box {
+            background: linear-gradient(135deg, rgba(52,211,153,0.1) 0%, rgba(79,142,247,0.1) 100%);
+            border: 2px solid var(--green);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .free-box .big {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+        .free-box p {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Pricing */
         .pricing { padding: 80px 0; }
         .pricing .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            max-width: 580px;
+            gap: 20px;
+            max-width: 600px;
             margin: 0 auto;
         }
         .price-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px 24px;
+            padding: 32px 26px;
             text-align: center;
         }
         .price-card.pro {
             border-color: var(--accent);
-            box-shadow: 0 0 40px rgba(79,142,247,0.08);
+            box-shadow: 0 0 40px rgba(79,142,247,0.1);
         }
         .price-card .tag {
             display: inline-block;
             background: var(--accent);
             color: #fff;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-        .price-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-        .price-card .price { font-size: 40px; font-weight: 800; margin-bottom: 4px; }
-        .price-card .price span { font-size: 14px; font-weight: 400; color: var(--muted); }
-        .price-card .desc { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
-        .price-card ul { list-style: none; text-align: left; font-size: 13px; }
-        .price-card ul li { padding: 6px 0; border-bottom: 1px solid var(--border); }
+        .price-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .price-card .price { font-size: 44px; font-weight: 800; margin-bottom: 4px; }
+        .price-card .price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+        .price-card .desc { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+        .price-card ul { list-style: none; text-align: left; font-size: 15px; }
+        .price-card ul li { padding: 8px 0; border-bottom: 1px solid var(--border); }
         .price-card ul li:last-child { border: none; }
-        .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 8px; }
+        .price-card ul li::before { content: "check "; color: var(--green); font-weight: 700; margin-right: 10px; }
 
+        /* CTA */
         .cta-section { padding: 90px 0; text-align: center; }
-        .cta-section h2 { font-size: 34px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
-        .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 28px; }
+        .cta-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 14px; letter-spacing: -1px; }
+        .cta-section p { color: var(--muted); font-size: 18px; margin-bottom: 28px; }
 
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
             text-align: center;
             color: var(--muted);
-            font-size: 13px;
+            font-size: 14px;
         }
-        footer p + p { margin-top: 4px; }
+        footer p + p { margin-top: 6px; }
 
         @media (max-width: 640px) {
-            .hero h1 { font-size: 34px; }
-            .section-title { font-size: 26px; }
-            .roi-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 38px; }
+            .section-title { font-size: 28px; }
             .pricing .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -391,88 +274,13 @@
 
 <section class="hero">
     <img src="assets/jesus.jpg" alt="Jesus" class="hero-avatar">
-    <h1>You were losing 3 jobs a month.<br><span class="accent">Here's how to stop.</span></h1>
-    <p class="subhead">Every inquiry gets a reply. Every lead gets tracked. Every follow-up is fast. Your business runs better -- even when you're busy.</p>
+    <h1>5 Free Leads.<br><span class="accent">No Catch.</span></h1>
+    <p class="subhead">We find your next 5 customers. You see the results. Then you decide if it's worth $99/month.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
-        Start free. No credit card.
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Get My 5 Free Leads
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <p class="hero-note">Set up in 10 minutes. No complicated software.</p>
-</section>
-
-<section class="problem">
-    <div class="container">
-        <h2>The problem isn't your work. It's the follow-up.</h2>
-        <p>You're great at your craft. But when you're on a job, your phone goes to voicemail. The lead calls the next person who picks up.</p>
-        <p>Sound familiar?</p>
-        <div class="stat">
-            <strong>60%</strong>
-            of leads never get a call back
-        </div>
-        <div class="stat">
-            <strong>35%</strong>
-            of appointments get missed due to no-shows
-        </div>
-        <div class="stat">
-            <strong>70%</strong>
-            of leads go cold after first contact
-        </div>
-    </div>
-</section>
-
-<section class="roi">
-    <div class="container">
-        <h2>The math is simple.</h2>
-        <p class="subtitle">Most service businesses convert about 20% of leads to customers. Here is what changes with Receptionist.</p>
-        <div class="roi-grid">
-            <div class="roi-card">
-                <div class="number">10</div>
-                <div class="label">leads/month</div>
-                <div class="result">avg for a small service business</div>
-            </div>
-            <div class="roi-card">
-                <div class="number">2</div>
-                <div class="label">customers/month (20%)</div>
-                <div class="result">without Receptionist</div>
-            </div>
-            <div class="roi-card">
-                <div class="number">5</div>
-                <div class="label">customers/month (50%)</div>
-                <div class="result">with Receptionist</div>
-            </div>
-        </div>
-        <div class="roi-bottom">
-            <div class="big">+$1,500/mo</div>
-            <p>Extra revenue at $500 avg job. Receptionist costs $99/mo. Net gain: $1,401.</p>
-        </div>
-    </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-    <div class="container">
-        <p class="section-label">What you get</p>
-        <h2 class="section-title">Built for how you actually work.</h2>
-        <div class="features-grid">
-            <div class="feat">
-                <h3>Fast reply, every time</h3>
-                <p>Inquiries get a reply within minutes. Even when you are on a job and cannot answer your phone.</p>
-            </div>
-            <div class="feat">
-                <h3>Easy to use</h3>
-                <p>It is just a spreadsheet you already know how to use. No new software to learn.</p>
-            </div>
-            <div class="feat">
-                <h3>More customers</h3>
-                <p>More of your hard-earned leads turn into actual customers and revenue.</p>
-            </div>
-            <div class="feat">
-                <h3>More organized</h3>
-                <p>You know exactly where every lead stands and what needs to happen next.</p>
-            </div>
-        </div>
-    </div>
+    <p class="hero-note">Real leads in your area. No obligation.</p>
 </section>
 
 <div class="divider"></div>
@@ -480,59 +288,47 @@
 <section class="section">
     <div class="container">
         <p class="section-label">How it works</p>
-        <h2 class="section-title">Three steps. That is it.</h2>
+        <h2 class="section-title">Simple. No risk.</h2>
         <div class="steps">
             <div class="step">
                 <div class="dot">1</div>
                 <div>
-                    <h3>Someone reaches out</h3>
-                    <p>They fill your form or send an email. We catch it and put it in your CRM automatically.</p>
+                    <h3>You fill out the form</h3>
+                    <p>Tell us what service you offer and what city you're in. Takes 30 seconds.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="dot">2</div>
                 <div>
-                    <h3>We send a fast reply</h3>
-                    <p>Your lead gets a response within minutes. They do not forget about you while you are busy.</p>
+                    <h3>We find 5 real leads in your area</h3>
+                    <p>People in your city who need your service right now. We do the research.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="dot">3</div>
                 <div>
-                    <h3>You follow up and close</h3>
-                    <p>You check your pipeline, follow up, and close the job. Organized. Consistent. Every time.</p>
+                    <h3>We send you their contact info</h3>
+                    <p>Name, phone, what they need. You make the call. You close the job.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="dot">4</div>
+                <div>
+                    <h3>You decide if it's worth $99/month</h3>
+                    <p>If those 5 leads turned into even 1 customer, you already covered the cost. If not, you don't pay.</p>
                 </div>
             </div>
         </div>
-        <img src="assets/workflow.png" alt="How Receptionist works" class="workflow-img" style="display:none;">
-        <div class="workflow-diagram">
-            <div class="wf-step">
-                <div class="wf-num">1</div>
-                <div class="wf-icon">📋</div>
-                <div class="wf-label">Lead fills your form</div>
-                <div class="wf-desc">From phone or desktop</div>
-            </div>
-            <div class="wf-arrow">&#8594;</div>
-            <div class="wf-step">
-                <div class="wf-num">2</div>
-                <div class="wf-icon">📊</div>
-                <div class="wf-label">CRM updates instantly</div>
-                <div class="wf-desc">Name, email, company, source</div>
-            </div>
-            <div class="wf-arrow">&#8594;</div>
-            <div class="wf-step">
-                <div class="wf-num">3</div>
-                <div class="wf-icon">📧</div>
-                <div class="wf-label">Welcome email fires</div>
-                <div class="wf-desc">Auto-sent to your lead</div>
-            </div>
-            <div class="wf-arrow">&#8594;</div>
-            <div class="wf-step">
-                <div class="wf-num">4</div>
-                <div class="wf-icon">📬</div>
-                <div class="wf-label">Daily briefing to you</div>
-                <div class="wf-desc">Calendar, tasks, new leads</div>
-            </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <div class="container">
+        <div class="free-box">
+            <div class="big">Real leads. Real customers.</div>
+            <p>We don't just organize your leads. We find new ones for you. Service businesses like HVAC, plumbing, roofing, electrical — people who need help now.</p>
         </div>
     </div>
 </section>
@@ -541,31 +337,33 @@
 
 <section class="pricing">
     <div class="container">
-        <p class="section-label">Pricing</p>
-        <h2 class="section-title">Simple. No surprises.</h2>
+        <p class="section-label">After the free leads</p>
+        <h2 class="section-title">Keep the leads coming.</h2>
         <div class="grid">
             <div class="price-card">
                 <h3>Starter</h3>
-                <div class="price">$0 <span>/month</span></div>
-                <p class="desc">For one person getting started</p>
+                <div class="price">$99 <span>/month</span></div>
+                <p class="desc">For one location</p>
                 <ul>
-                    <li>Up to 10 new leads/month</li>
-                    <li>Auto-reply to inquiries</li>
-                    <li>Simple CRM pipeline</li>
-                    <li>Daily summary email</li>
+                    <li>10 new leads/month</li>
+                    <li>Contact info included</li>
+                    <li>CRM tracking</li>
+                    <li>Daily digest</li>
+                    <li>Follow-up reminders</li>
                 </ul>
             </div>
             <div class="price-card pro">
-                <span class="tag">BEST</span>
-                <h3>Pro</h3>
-                <div class="price">$99 <span>/month</span></div>
-                <p class="desc">For businesses that want to grow</p>
+                <span class="tag">MOST POPULAR</span>
+                <h3>Growth</h3>
+                <div class="price">$299 <span>/month</span></div>
+                <p class="desc">For multiple locations</p>
                 <ul>
-                    <li>Unlimited leads</li>
-                    <li>Full CRM with source tracking</li>
-                    <li>Follow-up sequences</li>
-                    <li>ROI dashboard</li>
-                    <li>Priority setup</li>
+                    <li>30 new leads/month</li>
+                    <li>Contact info included</li>
+                    <li>CRM with pipeline</li>
+                    <li>Daily digest</li>
+                    <li>Priority support</li>
+                    <li>Multi-location</li>
                 </ul>
             </div>
         </div>
@@ -576,13 +374,13 @@
 
 <section class="cta-section">
     <div class="container">
-        <h2>Stop losing jobs to slow follow-up.</h2>
-        <p>Start today. Your first leads start converting tomorrow.</p>
+        <h2>5 free leads. Zero risk.</h2>
+        <p>Fill out the form. We start looking tonight.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3yBi1J_Tvxb5_Crk4fEV1Cm6tBieFm3ZgPq9vEGj49-CPEg/viewform" target="_blank" class="hero-cta">
-            Start free. No credit card.
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Get My 5 Free Leads
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p style="margin-top:16px;color:var(--muted);font-size:14px;">or <a href="https://buy.stripe.com/00w8wObjbebT1FY26f9k402" target="_blank" style="color:var(--accent);">subscribe to Pro -- $99/month</a></p>
+        <p style="margin-top:16px;color:var(--muted);font-size:15px;">No credit card. No commitment.</p>
     </div>
 </section>
 
